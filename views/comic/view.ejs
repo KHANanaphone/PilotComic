@@ -1,0 +1,24 @@
+<% if(comic) {
+
+console.log(comic); %>
+
+<div id='comic-page'>
+
+	<img class='single-comic' src='<%= comic.url %>'/>
+
+	<div class='comic-navbar'>
+	</div>
+
+	<div class='comic-comment'>
+	</div>
+
+	<div class='quora-section'>
+	</div>	
+
+</div>
+
+<% } else { %>
+
+Oops! No comic!
+
+<% } %>

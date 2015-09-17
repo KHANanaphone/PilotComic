@@ -1,0 +1,41 @@
+#page-edit textarea{
+	width: 100%;
+}
+
+#page-edit .preview{
+	max-height: 150px;
+	max-width: 100%;
+	padding: 20px 0px;
+}
+
+#page-list {
+
+	padding: 0.5em;
+	font-size: 1.2em;
+}
+
+#page-list .right{
+
+    float: right;
+    display: inline-block;
+}
+
+#page-list .right a{
+
+	color: #333;
+	font-weight: bold;
+    padding: 0.8em;
+
+    -webkit-transition: color 0.5s, background-color 0.5s;
+}
+
+#page-list .list-group-item{
+	padding-right: 0;
+}
+
+#page-list .right a:hover{
+
+	text-decoration: none;
+	color: #FFF;
+	background-color: #00A;
+}

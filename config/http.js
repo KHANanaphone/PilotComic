@@ -21,7 +21,15 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-  // middleware: {
+  customMiddleware: function(app){
+
+    var express = require('../node_modules/sails/node_modules/express');
+    var url = process.cwd() + '/static';
+    console.log(url);
+    app.use('/', express.static(url));
+  },
+
+  middleware: {
 
   /***************************************************************************
   *                                                                          *
@@ -30,34 +38,29 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // order: [
-    //   'startRequestTimer',
-    //   'cookieParser',
-    //   'session',
-    //   'myRequestLogger',
-    //   'bodyParser',
-    //   'handleBodyParserError',
-    //   'compress',
-    //   'methodOverride',
-    //   'poweredBy',
-    //   '$custom',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    //   '404',
-    //   '500'
-    // ],
+    order: [
+       'startRequestTimer',
+       'cookieParser',
+      'session',
+      'bodyParser',
+      'handleBodyParserError',
+      'compress',
+      'methodOverride',
+      'poweredBy',
+      '$custom',
+      'router',
+      'www',
+      'favicon',
+      '404',
+      '500'
+    ],
 
   /****************************************************************************
   *                                                                           *
   * Example custom middleware; logs each request to the console.              *
   *                                                                           *
   ****************************************************************************/
-
-    // myRequestLogger: function (req, res, next) {
-    //     console.log("Requested :: ", req.method, req.url);
-    //     return next();
-    // }
+  }
 
 
   /***************************************************************************
@@ -69,9 +72,6 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // bodyParser: require('skipper')
-
-  // },
 
   /***************************************************************************
   *                                                                          *

@@ -1,0 +1,46 @@
+#header .navbar-nav{
+	float:none;
+	margin: 0 auto;
+	display: table;
+	table-layout: fixed;
+}
+
+#header .navbar-nav li{
+	border-right: 1px solid #CCC;
+	text-align: center;
+    display: inline-block;
+
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+#header .navbar-nav li:hover{
+	background-color: #BBB;
+}
+
+#header .navbar-nav li a{
+
+    padding: 1em 3em;
+    -webkit-transition:color 0.5s;
+    transition: color 0.5s;
+}
+
+#header .navbar-nav li:hover a{
+	color: white;
+}
+
+#header .navbar-nav li:last-of-type{
+	border-right: none;
+}
+
+#header .header-banner{
+	background-color: black;
+	text-align: center;
+	font-size: 3em;
+	color: #EEE;
+}
+
+#header {
+	padding: 0px;
+}
+

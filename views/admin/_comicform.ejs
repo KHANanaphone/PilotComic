@@ -1,0 +1,64 @@
+<label for='title'>Title</label> <br />
+<input oninput='updateSlug(this)' type='text' name='title' 
+	<% if(typeof(comic) !== 'undefined') { %>
+	value='<%= comic.title ? comic.title : '' %>'
+	<% } %>
+/>
+<br /><br />
+
+<label for='title'>Slug</label> <br />
+<input id='slug' type='text' name='slug' readonly
+	<% if(typeof(comic) !== 'undefined') { %>
+	value='<%= comic.slug ? comic.slug : '' %>'
+	<% } %>
+/>
+<br /><br />
+
+<label for='comic'>Image File</label> <br />
+<input accept='image/*' type='file' name='comic' onchange='updateImage(this)'/>
+<img class='preview' <% if(typeof(comic) !== 'undefined' && comic.url) { %>
+	src='<%= comic.url %>'
+	<% } %>
+/>
+<br />
+
+<label for='comment'>Comment</label> <br />
+<textarea type='text' name='comment' rows='5'><% if(typeof(comic) !== 'undefined') { %><%= comic.comment ? comic.comment : '' %><% } %></textarea>
+<br /><br />
+
+<% if(typeof(comic) !== 'undefined') { %>
+	<input type='hidden' name='date' 
+	value='<%= comic.date %>'/>
+<% } %>
+
+<button type='submit' class='btn btn-success'>Save</button>
+
+<script>
+
+(function(){
+
+}).call();
+
+function updateSlug(title){
+
+	if(!CAN_EDIT_SLUG)
+		return;
+
+	var text = title.value.toLowerCase()
+        .replace(/[^\w ]+/g,'')
+        .replace(/ +/g,'-');
+
+    $('#slug').val(text);
+}
+
+function updateImage(input){
+
+	var reader = new FileReader();
+	reader.onload = function(e){
+		$('#page-edit .preview').attr('src', e.target.result);
+	};
+
+	reader.readAsDataURL(input.files[0]);
+}
+
+</script>

@@ -32,8 +32,16 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
+  'get /': 'ComicController.view',
+  'get /comics/:slug': 'ComicController.view',
+  'get /archive': 'ComicController.archive',
+
+  '/admin/login' : 'AdminController.login',
+  'get /admin': 'AdminController.index',
+  '/admin/new' : 'AdminController.new',
+  '/admin/edit/:slug' : {
+    controller: 'AdminController',
+    action: 'edit'
   }
 
   /***************************************************************************

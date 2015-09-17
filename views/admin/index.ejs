@@ -1,0 +1,21 @@
+<a href='/admin/new' role='button' class='btn btn-primary'>
+	Upload New Comic
+</a>
+
+<ul id='page-list' class='list-group'>
+
+	<% for(var i = 0; i < comics.length; i++){ 
+		var c = comics[i]; %>
+		
+		<li class='list-group-item'>
+			<%= c.title %>
+			<span class='right'>
+				<a href='/comics/<%= c.slug %>'>View</a>
+				<a href='/admin/edit/<%= c.slug %>'>Edit</a>
+				<a href='#'>Delete</a>
+			</span>			
+		</li>
+
+	<% } %>
+
+</ul>
