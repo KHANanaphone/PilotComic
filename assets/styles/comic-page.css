@@ -1,0 +1,44 @@
+#comic-page {
+	text-align: center;
+}
+
+#comic-page .single-comic{
+
+	max-width: 100%;
+    margin-bottom: 2em;
+}
+
+#comic-page .comic-comment-section {
+
+	text-align: left;
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid #BBB;
+    background-color: #F8F8F8;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#comic-page .comic-comment-section .title {
+
+	font-size: 2.5em;
+}
+
+#comic-page .comic-comment-section .date {
+	
+	font-size: 1em;
+	color: #AAA;
+}
+
+#comic-page .comic-comment-section .comic-comment {
+	
+	padding-top: 2em;
+	font-size: 1em;
+}
+
+#comic-page #disqus_thread{
+
+    margin-top: 1em;
+}

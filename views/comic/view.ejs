@@ -1,24 +1,58 @@
-<% if(comic) {
+<% var date = params.comic.date;
 
-console.log(comic); %>
+	var monthNames = [
+	  "January", "February", "March",
+	  "April", "May", "June", "July",
+	  "August", "September", "October",
+	  "November", "December"
+	];
+
+	var formattedDate = monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+%>
 
 <div id='comic-page'>
 
-	<img class='single-comic' src='<%= comic.url %>'/>
+	<img class='single-comic' src='<%= params.comic.url %>'/>
 
-	<div class='comic-navbar'>
+	<div class='comic-navbar clearfix'>
+		<a class='col-xs-3 btn btn-default' 
+			<%= params.first ? 'href=/comics/' + params.first : 'disabled' %>
+		>First</a>
+		<a class='col-xs-3 btn btn-default'
+			<%= params.prev ? 'href=/comics/' + params.prev : 'disabled' %>
+		>Prev</a>
+		<a class='col-xs-3 btn btn-default'
+			<%= params.next ? 'href=/comics/' + params.next : 'disabled' %>
+		>Next</a>
+		<a class='col-xs-3 btn btn-default'
+			<%= params.last ? 'href=/comics/' + params.last : 'disabled' %>
+		>Last</a>
 	</div>
 
-	<div class='comic-comment'>
+	<div class='comic-comment-section'>
+		<div class='title'><%= params.comic.title %></div>
+		<div class='date'><%= formattedDate %></div>
+		<div class='comic-comment'><%= params.comic.comment %></div>
 	</div>
 
-	<div class='quora-section'>
+	<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'robcomic';
+		    
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0])
+		         .appendChild(dsq);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 	</div>	
 
 </div>
 
-<% } else { %>
+<script>
 
-Oops! No comic!
-
-<% } %>
+</script>

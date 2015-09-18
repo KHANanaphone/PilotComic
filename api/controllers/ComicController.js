@@ -15,13 +15,45 @@ module.exports = {
 			Comic.find().limit(1).exec(function(err, obj){
 
 				var comic = obj.length > 0 ? obj[0] : null;
-				res.view({comic: comic});
+				step2(comic);
 			});
 		}
 		else {
 			Comic.findOne({slug: slug}, function(err, obj){
 
-				res.view({comic: obj});
+				step2(obj);
+			});
+		}
+
+		function step2(comic){
+
+			if(!comic)
+				return res.view('comic/nocomic.ejs');
+
+			var params = {comic: comic};
+
+			Comic.find().sort('date').exec(function(err, objs){
+
+				params.first = objs[0].slug;
+				if(params.first == comic.slug)
+					params.first = null;
+
+				params.last = objs[objs.length - 1].slug;
+				if(params.last == comic.slug)
+					params.last = null;
+
+				for(var i = 0; i < objs.length; i++){
+
+					var slug = objs[i].slug;
+
+					if(slug == comic.slug){
+						params.prev = objs[i - 1] ? objs[i - 1].slug : null;
+						params.next = objs[i + 1] ? objs[i + 1].slug : null;
+						break;
+					}
+				}
+
+				res.view({params: params});
 			});
 		}		
 	},
