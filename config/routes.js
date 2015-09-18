@@ -42,7 +42,8 @@ module.exports.routes = {
   '/admin/edit/:slug' : {
     controller: 'AdminController',
     action: 'edit'
-  }
+  },
+  'POST /admin/delete': 'AdminController.delete'
 
   /***************************************************************************
   *                                                                          *

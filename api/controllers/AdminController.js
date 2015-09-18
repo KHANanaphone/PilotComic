@@ -67,6 +67,18 @@ module.exports = {
 			else
 				res.view({comic: comic});
 		});
+	},
+
+	delete: function(req, res){
+
+		if(!authCheck(req, res))
+			return;
+
+		var slug = req.param('slug');
+
+		Comic.destroy({slug: slug}).exec(function(err){
+			console.log('deleted');
+		});
 	}
 };
 

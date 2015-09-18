@@ -12,10 +12,26 @@
 			<span class='right'>
 				<a href='/comics/<%= c.slug %>'>View</a>
 				<a href='/admin/edit/<%= c.slug %>'>Edit</a>
-				<a href='#'>Delete</a>
+				<a href='javascript:void(0);' data-slug='<%=c.slug%>' onclick='deleteConfirm(this)'>Delete</a>
 			</span>			
 		</li>
 
 	<% } %>
 
 </ul>
+
+<script>
+	
+	function deleteConfirm(source){
+
+		var slug = source.dataset.slug;
+
+		var c = window.confirm('Are you sure you want to delete this comic?');
+
+		if(c){
+			$.post('/admin/delete', {slug: slug});
+			$(source).parents('.list-group-item').remove();
+		}
+	};
+
+</script>

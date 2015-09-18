@@ -60,7 +60,10 @@ module.exports = {
 
 	archive: function(req, res){
 
-		return res.send('TDB archive');		
+		Comic.find(function(err, obj){
+			
+			res.view({comics: obj});
+		});	
 	}
 };
 
