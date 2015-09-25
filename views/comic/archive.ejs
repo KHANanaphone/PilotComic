@@ -1,10 +1,17 @@
+<% 
+	function formatDate(date){
+
+		return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+	}
+%>
+
 <div id='page-list' class='list-group'>
 
 	<% for(var i = 0; i < comics.length; i++){ 
 		var c = comics[i]; %>
 		
 		<a href='/comics/<%= c.slug %>' class='list-group-item'>
-			<%= c.title %>	
+			<%= formatDate(c.date) %> <span class='archive-date'><%= c.title %></span>
 		</a>
 
 	<% } %>

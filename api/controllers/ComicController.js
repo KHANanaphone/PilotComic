@@ -53,7 +53,7 @@ module.exports = {
 					}
 				}
 
-				res.view({params: params});
+				res.view({params: params, isHome: !req.param('slug')});
 			});
 		}		
 	},

@@ -39,6 +39,14 @@
 	font-size: 3em;
 	color: #EEE;
 	display: block;
+	font-family: Montho;
+
+	background: url(/images/banner.png);
+	  text-shadow:
+	   -1px -1px 0 #000,  
+	    1px -1px 0 #000,
+	    -1px 1px 0 #000,
+	     1px 1px 0 #000;
 }
 
 #header .header-banner:hover{

@@ -19,6 +19,7 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    margin-bottom: 1em;
 }
 
 #comic-page .comic-comment-section .title {
@@ -41,4 +42,14 @@
 #comic-page #disqus_thread{
 
     margin-top: 1em;
+}
+
+#comic-page .comic-navbar a{
+
+    min-width: 80%;
+}
+
+#page-list .archive-date{
+	float: right;
+	padding-right: 2em;
 }
