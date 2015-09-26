@@ -44,9 +44,25 @@
     margin-top: 1em;
 }
 
-#comic-page .comic-navbar a{
+#comic-page .comic-navbar .nav-link{
 
-    min-width: 80%;
+    font-family: 'Jura';
+    font-size: 2em;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+#comic-page .comic-navbar .nav-link[disabled]{
+
+	opacity: 0.2;
+	cursor: default;
+}
+
+#comic-page .comic-navbar .nav-link:hover{
+
+	color: #008;
+	text-decoration: none;
 }
 
 #page-list .archive-date{

@@ -16,22 +16,22 @@
 
 	<div class='comic-navbar clearfix'>
 		<div class='col-xs-3'>
-			<a class='btn btn-default' 
+			<a class='nav-link' 
 				<%= params.first ? 'href=/comics/' + params.first : 'disabled' %>
 			>First</a>
 		</div>
 		<div class='col-xs-3'>
-			<a class='btn btn-default'
+			<a class='nav-link' 
 			<%= params.prev ? 'href=/comics/' + params.prev : 'disabled' %>
 			>Previous</a>
 		</div>
 		<div class='col-xs-3'>
-			<a class='btn btn-default'
+			<a class='nav-link' 
 				<%= params.next ? 'href=/comics/' + params.next : 'disabled' %>
 			>Next</a>
 		</div>
 		<div class='col-xs-3'>		
-			<a class='btn btn-default'
+			<a class='nav-link' 
 				<%= params.last ? 'href=/comics/' + params.last : 'disabled' %>
 			>Last</a>
 		</div>
@@ -57,7 +57,7 @@
 	    })();
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	
+
 	</div>
 </div>
 
