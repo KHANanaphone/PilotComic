@@ -22,7 +22,7 @@ module.exports = {
 
   findWithLoginInfo: function(name, pass, cb){
 
-  	User.findOne({name: name, password: pass}).exec(cb);
+     console.log(name + ' ' + pass);
+  	  User.findOne({name: name, password: pass}).exec(cb);
   }
 };
-

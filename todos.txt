@@ -1,0 +1,35 @@
++ Admin page
+++ Login
+++ Add comic
+++ Delete comic
+++ Edit comic
+
++ Show single comic
++ nav buttons
++ comic author comment
++ comic date
++ comic title
++ disqus
+
++ Archive
+
++ header
+++ temp image
+
++ footer
++ remove 'about' link
++ title
+
++ disqus home page url fix
+++ change from robcomic name
+
++ date on archive
+
++ Different font for nav buttons
++ Make less "button-y"
+
+- fix light/dark text style changing
+
+npm install sails-mongo
+mongod
+sails lift

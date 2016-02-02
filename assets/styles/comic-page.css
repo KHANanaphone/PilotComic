@@ -20,6 +20,7 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
     margin-bottom: 1em;
+	color: black;
 }
 
 #comic-page .comic-comment-section .title {
@@ -28,13 +29,13 @@
 }
 
 #comic-page .comic-comment-section .date {
-	
+
 	font-size: 1em;
 	color: #AAA;
 }
 
 #comic-page .comic-comment-section .comic-comment {
-	
+
 	padding-top: 2em;
 	font-size: 1em;
 }
@@ -49,8 +50,10 @@
     font-family: 'Jura';
     font-size: 2em;
     cursor: pointer;
-    color: black;
+    color: #BBB;
     font-weight: bold;
+
+	transition: color 0.3s ease;
 }
 
 #comic-page .comic-navbar .nav-link[disabled]{
@@ -61,7 +64,7 @@
 
 #comic-page .comic-navbar .nav-link:hover{
 
-	color: #008;
+	color: white;
 	text-decoration: none;
 }
 

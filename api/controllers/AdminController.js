@@ -6,19 +6,21 @@
  */
 
 module.exports = {
-	
+
 	login: function(req, res){
 
 		if(req.body){
 
 			var user = req.body.username;
 			var pass = req.body.password;
+
 			User.findWithLoginInfo(user, pass, function(err, usr){
 
+				     console.log(err + ' ' + usr);
 				if(usr && usr.admin){
 					req.session.authed = true;
 					res.redirect('/admin');
-				}		
+				}
 				else
 					res.view({error: 'Invalid username or password'});
 			});
@@ -46,7 +48,7 @@ module.exports = {
 
 		if(req.body)
 			return checkAndSave(req, res, true);
-		
+
 		res.view();
 	},
 
@@ -112,8 +114,8 @@ function checkAndSave(req, res, isNew){
 					error: 'This has the same slug as a different comic, choose a different one.'
 				});
 			else
-				saveComic(comic, file, res, isNew);							
-		});	
+				saveComic(comic, file, res, isNew);
+		});
 	else
 		saveComic(comic, file, res, isNew);
 };
@@ -153,5 +155,5 @@ function authCheck(req, res){
 		res.redirect('/admin/login');
 		return false;
 	}
-	return true;	
+	return true;
 };

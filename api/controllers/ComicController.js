@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	
+
 	view: function(req, res){
 
 		var slug = req.param('slug');
@@ -55,15 +55,14 @@ module.exports = {
 
 				res.view({params: params, isHome: !req.param('slug')});
 			});
-		}		
+		}
 	},
 
 	archive: function(req, res){
 
 		Comic.find(function(err, obj){
-			
+
 			res.view({comics: obj});
-		});	
+		});
 	}
 };
-

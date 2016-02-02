@@ -6,7 +6,7 @@
 }
 
 #header .navbar-nav li{
-	border-right: 1px solid #CCC;
+	border-right: 1px solid #666;
 	text-align: center;
     display: inline-block;
 
@@ -15,7 +15,7 @@
 }
 
 #header .navbar-nav li:hover{
-	background-color: #BBB;
+	background-color: #88B;
 }
 
 #header .navbar-nav li a{

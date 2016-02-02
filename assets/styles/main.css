@@ -4,9 +4,10 @@
 
 html, body{
 	height: 100%;
+    background-color: #153E96;
 }
 
-@font-face{
-	font-family: Montho;
-	src: url(fonts/Monthoers.ttf);
-};
+#body-content{
+
+	color: white;
+}
